@@ -12,7 +12,8 @@ public class AppUsersController(ApplicationDbContext context) : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
     {
-        var users = await context.AppUsers.ToListAsync();
+        var users = await context.AppUsers
+        .ToListAsync();
         return Ok(users);
     }
 

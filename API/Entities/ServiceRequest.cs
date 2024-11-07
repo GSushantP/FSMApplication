@@ -15,6 +15,8 @@ public class ServiceRequest
     [Required]
     public required string Priority { get; set; }
     public required string Status { get; set; }
-    public int TechnicianId { get; set; }
-   // public AppUser Technician { get; set; }
+    public double Latitude { get; set; }
+    public double Longitude { get; set; }
+    public int? TechnicianId { get; set; }
+    public Technician? Technician { get; set; }
 }

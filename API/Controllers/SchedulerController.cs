@@ -12,11 +12,32 @@ public class SchedulerController(SchedulerService schedulerService) : Controller
     [HttpPost ("assign-technician/{requestId}")]
     public async Task<IActionResult> AssignTechnician(int requestId)
     {
-        var assignedRequest = await schedulerService.AssignTechnicianAsync(requestId);
-        if(assignedRequest == null)
+        try
         {
-            return NotFound("Service Request not fount or already completed");
+            var scheduleRequest = await schedulerService.ScheduleTechnicianAsync(requestId);
+            if (scheduleRequest == null)
+            {
+                return NotFound($"Service request with ID {requestId} not found");
+            }
+            return Ok(scheduleRequest);
         }
-        return Ok(assignedRequest);
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+    //unassign technician API Endpoint
+    [HttpPost("unassign-technician/{requestId}")]
+    public async Task<IActionResult> UnassignTechnician(int requestId)
+    {
+        try
+        {
+            await schedulerService.UnassignTechnicianAsync(requestId);
+            return Ok("Unassigned");
+        }
+        catch (Exception ex)
+        {
+           return StatusCode(500, ex.Message);
+        }
     }
 }
