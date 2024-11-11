@@ -32,18 +32,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let task of assignedTasks; let i = index" [style.display]="i < 5 ? 'table-row' : 'none'">
-            <td>{{ task.id }}</td>
-            <td>{{ task.technicianName }}</td>
+          <tr *ngFor="let task of assignedTasks">
+            <td>{{ task.taskId }}</td>
+            <td>{{ task.technicianName}}</td>
           </tr>
         </tbody>
       </table>
  
       <!-- Input and Buttons at Bottom -->
       <div class="task-controls">
-        <input type="text" placeholder="Enter Service Request ID" class="input-field" />
-        <button class="assign-button">Assign Task</button>
-        <button class="unassign-button">Unassign Task</button>
+        <input type="number" [(ngModel)]="serviceRequestId" placeholder="Enter Service Request ID" class="input-field" />
+        <button class="assign-button"(click)="assignTask()">Assign Task</button>
+        <button class="unassign-button"(click)="unassignTask()">Unassign Task</button>
       </div>
     </div>
  

@@ -1,5 +1,9 @@
+using API.Data;
+using API.DTOs;
+using API.Entities;
 using API.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
@@ -7,8 +11,22 @@ namespace API.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 
-public class SchedulerController(SchedulerService schedulerService) : ControllerBase
+public class SchedulerController(SchedulerService schedulerService, ApplicationDbContext context) : ControllerBase
 {
+    [HttpGet("assigned-tasks")] //api/scheduler/assigned-tasks
+    public async Task<ActionResult<IEnumerable<ServiceRequest>>> GetAssignedTasks()
+    {
+        var assignedTasks = await context.ServiceRequests
+            .Where(sr => sr.TechnicianId != null)
+            .Select(sr => new AssignedTaskDto
+            {
+                TaskId = sr.Id,
+                TechnicianName = sr.Technician.Name
+            })
+            .ToListAsync();
+
+        return Ok(assignedTasks);
+    }
     [HttpPost ("assign-technician/{requestId}")]
     public async Task<IActionResult> AssignTechnician(int requestId)
     {
