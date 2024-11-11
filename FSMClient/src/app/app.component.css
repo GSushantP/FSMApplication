@@ -1,0 +1,134 @@
+/* General container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+ 
+/* App title */
+.app-title {
+  font-size: 2em;
+  color: #ffffff;
+  text-align: center;
+  background-color: #ff6f61;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+ 
+/* Section container */
+.section-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+ 
+/* Individual sections */
+.technicians-section, .assigned-tasks-section, .maps-section {
+  flex: 1;
+  padding: 15px;
+  border-radius: 8px;
+}
+ 
+.technicians-section {
+  background-color: #e0f7fa; /* Light teal for a softer look */
+  color: #333;
+}
+ 
+.assigned-tasks-section {
+  background-color: #e3f2fd; /* Light blue for softer contrast */
+  color: #333;
+}
+ 
+.maps-section {
+  background-color: #fff3e0; /* Soft orange */
+  color: #333;
+}
+ 
+/* Table styles for all sections */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+ 
+th, td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+ 
+th {
+  background-color: #333;
+  color: #ffffff;
+}
+ 
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+ 
+/* Service Requests Section */
+.service-requests-section {
+  background-color: #f3e5f5;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 300px; /* Adjust height as needed */
+}
+ 
+.service-requests-section h2 {
+  color: #6a1b9a;
+}
+ 
+.service-requests-section table th {
+  background-color: #6a1b9a;
+}
+ 
+.service-requests-section table td {
+  color: #333;
+}
+ 
+/* Task Controls Styling at Bottom */
+.task-controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+ 
+.input-field {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+ 
+.assign-button, .unassign-button {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+ 
+.assign-button {
+  background-color: #4CAF50;
+  margin-right: 10px;
+}
+ 
+.unassign-button {
+  background-color: #E53935;
+}
+ 
+/* Scroll functionality for Assigned Tasks */
+.assigned-tasks-section .task-table {
+  max-height: 150px; /* Limit visible tasks */
+  overflow-y: auto;
+}
+ 
+/* Make text readable on lighter background */
+.technicians-section table td,
+.assigned-tasks-section table td,
+.maps-section {
+  color: #333;
+}

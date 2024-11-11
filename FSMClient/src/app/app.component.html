@@ -1,0 +1,81 @@
+<div class="container">
+  <h1 class="app-title">FSM Application</h1>
+ 
+  <div class="section-container">
+    <!-- Technicians List Section -->
+    <div class="technicians-section">
+      <h2>Technicians</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tech of technicians">
+          <td>{{ tech.id }}</td>
+          <td>{{ tech.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+ 
+    <!-- Assigned Tasks Section -->
+    <div class="assigned-tasks-section">
+      <h2>Assigned Tasks</h2>
+      <table class="task-table">
+        <thead>
+          <tr>
+            <th>Task ID</th>
+            <th>Technician</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of assignedTasks; let i = index" [style.display]="i < 5 ? 'table-row' : 'none'">
+            <td>{{ task.id }}</td>
+            <td>{{ task.technicianName }}</td>
+          </tr>
+        </tbody>
+      </table>
+ 
+      <!-- Input and Buttons at Bottom -->
+      <div class="task-controls">
+        <input type="text" placeholder="Enter Service Request ID" class="input-field" />
+        <button class="assign-button">Assign Task</button>
+        <button class="unassign-button">Unassign Task</button>
+      </div>
+    </div>
+ 
+    <!-- Google Maps Section Placeholder -->
+    <div class="maps-section">
+      <h2>Google Maps</h2>
+      <!-- Google Maps placeholder content can go here -->
+    </div>
+  </div>
+ 
+  <!-- Service Requests Section -->
+  <div class="service-requests-section">
+    <h2>Service Requests</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>Location</th>
+          <th>Status</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of serviceRequests">
+          <td>{{ request.id }}</td>
+          <td>{{ request.description }}</td>
+          <td>{{ request.location }}</td>
+          <td>{{ request.status }}</td>
+          <td>{{ request.priority }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
