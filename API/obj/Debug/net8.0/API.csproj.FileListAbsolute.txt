@@ -138,3 +138,11 @@ C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\runtimes\osx-arm64\nativ
 C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\runtimes\osx-x64\native\google-ortools-native.dylib
 C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\runtimes\osx-x64\native\libortools.9.dylib
 C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\runtimes\win-x64\native\google-ortools-native.dll
+C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\su40068684\FSMApplication\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

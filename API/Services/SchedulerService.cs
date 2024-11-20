@@ -104,7 +104,7 @@ public class SchedulerService(ApplicationDbContext context)
         return request;
     }
 
-    //Haversin formula for calculation distance between two lat/long points
+    //formula for calculation distance between two lat/long points
     private double CalculateDistance(double lat1, double lon1, double lat2, double lon2)
     {
         const double EarthRadiusKm = 6371.0;
